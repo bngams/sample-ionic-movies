@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class HomePage implements OnInit {
   title = 'Variable simple';
+  searchTerm: string;
 
   // movies array
   movies: Observable<any>;
@@ -18,7 +19,11 @@ export class HomePage implements OnInit {
 
   // @PostConstruct
   ngOnInit() {
-    this.movies = this.movieService.search('Aquaman');
+  }
+
+  search() {
+    console.log('Search term: ', this.searchTerm);
+    this.movies = this.movieService.search(this.searchTerm);
   }
 
 

@@ -26,6 +26,6 @@ export class MovieService {
    * get movie's details
    */
   details(id: string) {
-
+    // appel au ws 
   }
 }

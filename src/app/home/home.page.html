@@ -8,12 +8,12 @@
 
 <ion-content padding>
   <!-- Searchbar with a placeholder -->
-  <ion-searchbar placeholder="Search a movie"></ion-searchbar>
+  <ion-searchbar placeholder="Search a movie" [(ngModel)]="searchTerm" (ionChange)="search($event)"></ion-searchbar>
 
-  <h1>{{ title }}</h1>
+  <h1>{{ searchTerm }}</h1>
   <!-- List of Text Items -->
   <ion-list>
-    <ion-item *ngFor="let movie of (movies | async)">
+    <ion-item *ngFor="let movie of (movies | async)" [routerLink]="['/', 'movies', movie.imdbID]">
       <ion-label>{{movie.Title}}</ion-label>
     </ion-item>
   </ion-list>
