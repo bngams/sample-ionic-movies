@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiKey: 'azerty',
+  apiBaseUrl: 'https://www.omdbapi.com/'
 };
