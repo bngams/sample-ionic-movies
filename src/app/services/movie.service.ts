@@ -25,7 +25,7 @@ export class MovieService {
   /**
    * get movie's details
    */
-  details(id: string) {
-    // appel au ws 
+  details(id: string): Observable<any> {
+    return this.http.get(`${environment.apiBaseUrl}?apikey=${environment.apiKey}&i=${id}&plot=full`);
   }
 }
